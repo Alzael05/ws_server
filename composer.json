@@ -1,0 +1,13 @@
+{
+	"autoload": {
+		"psr-4": {
+			"App\\Config\\": "app/config",
+			"App\\Source\\": "app/src"
+		}
+	},
+	"require": {
+		"cboden/ratchet": "^0.3.6",
+		"ratchet/pawl": "^0.2.3",
+		"react/zmq": "^0.3.0"
+	}
+}
