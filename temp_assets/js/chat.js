@@ -72,7 +72,7 @@
 						// socket.connect();
 						/*conn = new */
 						ab.connect( /*Session*/
-							'wss://ws.localhost.com:8443',
+							'wss://ws.server.com:8443',
 							function ( session ) {
 								// console.log( conn );
 								sess = session;

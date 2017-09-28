@@ -13,7 +13,7 @@
 		{
 			$this->config = $config;
 
-			echo print_r( $this, TRUE );
+			// echo print_r( $this, TRUE );
 
 			// if ( function_exists( 'getrusage' ) )
 			// {

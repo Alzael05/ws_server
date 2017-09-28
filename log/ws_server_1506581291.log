@@ -1,0 +1,7 @@
+Ratchet\Wamp\Topic::__set_state(array(
+   'autoDelete' => false,
+   'id' => 'sample',
+   'subscribers' => 
+  SplObjectStorage::__set_state(array(
+  )),
+))		2017-09-28 14:48:11

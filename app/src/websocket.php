@@ -30,7 +30,8 @@
 			// Listen for the web server to make a ZeroMQ push after an ajax request
 			$context    = new Context( $event_loop );
 			$pull       = $context->getSocket( \ZMQ::SOCKET_PULL ); // $pull = $context->getSocket( \ZMQ::SOCKET_SUB ); // $pull->setSockOpt( \ZMQ::SOCKOPT_SUBSCRIBE, 'sample' );
-			$pull->bind( 'tcp://127.0.0.1:5566' ); // Binding to 127.0.0.1 means the only client that can connect is itself // $pull->bind( 'tcp://0.0.0.0:5555' );
+			$pull->bind( "tcp://{$ws_config['bind_ip']}:{$ws_config['bind_port']}" ); // Binding to 127.0.0.1 means the only client that can connect is itself // $pull->bind( 'tcp://0.0.0.0:5555' );
+			// $pull->bind( "tcp://127.0.0.1:5555" ); // Binding to 127.0.0.1 means the only client that can connect is itself // $pull->bind( 'tcp://0.0.0.0:5555' );
 			$pull->on( 'message', array( $ws_handler , 'send_message' ) );
 
 			/*
@@ -47,7 +48,8 @@
 
 			// Set up our WebSocket server for clients wanting real-time updates
 			$web_sock     = new Server( $event_loop );
-			$web_sock->listen( 8443, '0.0.0.0' ); // Binding to 0.0.0.0 means remotes can connect
+			$web_sock->listen( $ws_config['listen_port'], $ws_config['listen_ip'] ); // Binding to 0.0.0.0 means remotes can connect
+			// $web_sock->listen( 8443, '0.0.0.0' ); // Binding to 0.0.0.0 means remotes can connect
 
 			$_wamp_server = new WampServer( $ws_handler  );
 

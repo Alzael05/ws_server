@@ -1,12 +1,12 @@
 <?php
 
 	$config[ 'MAIN' ] = array(
-		'receive_port'  => '5555',
-		'receive_ip'    => '0.0.0.0',
-		'bind_port'     => '8080',
-		'bind_ip'       => '0.0.0.0',
-		'sync_port'     => '5556',
-		'callback_port' => '5557'
+		'bind_port'     => 5555,
+		'bind_ip'       => '127.0.0.1',
+		'listen_port'  => 8080,
+		'listen_ip'    => '0.0.0.0',
+		// 'sync_port'     => '5556',
+		// 'callback_port' => '5557'
 	);
 	// $config[ 'MAIN' ][ 'receive_port'    ] = '5555';
 	// $config[ 'MAIN' ][ 'receive_ip'      ] = '0.0.0.0';
@@ -18,7 +18,7 @@
 	$config[ 'LOCAL' ] = array(
 		'server_name'    => trim( gethostname() ),//'SD-019',
 		'server_ip'      => '192.168.248.136',
-		'base_url'       => 'https://10.0.2.15/ws/master_v2',
+		// 'base_url'       => 'https://10.0.2.15/ws/master_v2',
 		'log_file'       => 'C:\xampp\htdocs\ws_server\log\ws_server',
 		'error_log_file' => 'C:\xampp\htdocs\ws_server\log\ws_error',
 		'mem_log'        => 'C:\xampp\htdocs\ws_server\log\ws_mem'
